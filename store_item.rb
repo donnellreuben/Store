@@ -112,6 +112,3 @@ item1.flavor=("muddy")
 item1.print_description
 item2.print_description
 item3.print_description
-
-
-
