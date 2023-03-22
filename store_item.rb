@@ -24,11 +24,14 @@
 
 #CLASS
 class Items
-  def initialize(item_name, color, price, flavor)
-    @item_name = item_name
-    @color = color
-    @price = price
-    @flavor = flavor
+  attr_reader :items
+  attr_writer :items
+
+  def initialize(input_options)
+    @item_name = input_options[:item_name]
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @flavor = input_options[:flavor]
   end
 
   def print_description
@@ -61,9 +64,28 @@ class Items
 end
 
 #dont touch this (template/original)
-item1 = Items.new("candybar", "brown", 10000, "milk chocolate")
-item2 = Items.new("popcorn", "yellow", 1.0, "cheddar")
-item3 = Items.new("lollipop", "green", 20.0, "sour apple")
+item1 = Items.new({
+  :item_name => "candybar", 
+  :color => "brown", 
+  :price => 10000, 
+  :flavor => "milk chocolate"
+})
+item2 = Items.new({
+  :item_name => "popcorn", 
+  :color => "yellow", 
+  :price => 1.0, 
+  :flavor => "cheddar"
+})
+item3 = Items.new({
+  :item_name => "lollipop", 
+  :color => "green", 
+  :price => 20.0, 
+  :flavor => "sour apple"
+})
+
+
+
+
 
 #edit items here:
   #item1
@@ -90,3 +112,6 @@ item1.flavor=("muddy")
 item1.print_description
 item2.print_description
 item3.print_description
+
+
+
